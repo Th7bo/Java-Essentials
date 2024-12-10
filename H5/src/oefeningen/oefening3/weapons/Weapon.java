@@ -1,19 +1,26 @@
 package oefeningen.oefening3.weapons;
 
+/**
+ * The type Weapon.
+ */
 public abstract class Weapon {
-
-    /*
-    Deze klasse vormt de basis voor de wapens en er kunnen geen objecten van worden aangemaakt.
-    De constructor verwacht een aantal aanvalspunten (attackPower). De methode doDamage()
-    geeft het aantal aanvalspunten terug.
-     */
 
     private int attackPower;
 
+    /**
+     * Instantiates a new Weapon.
+     *
+     * @param attackPower the attack power
+     */
     public Weapon(int attackPower) {
         this.attackPower = attackPower;
     }
 
+    /**
+     * Do damage double.
+     *
+     * @return the double
+     */
     public double doDamage() {
         return attackPower;
     }
