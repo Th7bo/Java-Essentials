@@ -1,34 +1,39 @@
 package extraoefeningen.oefening1;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class ImageReader {
 
-    public static Afbeelding readImage(String name) throws IOException {
-        File file = new File("images/input", name);
-        if (!file.exists()) throw new FileNotFoundException(name + " not found");
-        BufferedImage image = ImageIO.read(file);
+    private static RGBPixel[][] createPixelList(BufferedImage image) {
+        int width = image.getWidth();
+        int height = image.getHeight();
 
-        int width = image.getWidth(); // breedte,  x
-        int height = image.getHeight(); // hoogte, y
-        RGBPixel[][] pixels = new RGBPixel[width][height];
-
-        for (int row = 0; row < height; row++) {
-            for (int col = 0; col < width; col++) {
-                // row = y
-                // col = x
-                int pixel = image.getRGB(col, row);
-                Color color = new Color(pixel);
-                RGBPixel rgbPixel = new RGBPixel(color.getRed(), color.getGreen(), color.getBlue());
-                pixels[col][row] = rgbPixel;
+        RGBPixel[][] pixels = new RGBPixel[height][width];
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                int pixel = image.getRGB(j, i);
+                int alpha = (pixel >> 24) & 0xff;
+                int red = (pixel >> 16) & 0xff;
+                int green = (pixel >> 8) & 0xff;
+                int blue = (pixel) & 0xff;
+                pixels[i][j] = new RGBPixel(red, green, blue);
             }
         }
+        return pixels;
+    }
 
-        return new Afbeelding(pixels);
+    public static Afbeelding readImage(String filename) {
+        Path path = Paths.get("images/input/"+filename);
+        try {
+            BufferedImage image = ImageIO.read(path.toFile());
+            return new Afbeelding(createPixelList(image));
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+        return null;
     }
 }

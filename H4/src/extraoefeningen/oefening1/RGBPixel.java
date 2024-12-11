@@ -12,6 +12,12 @@ public class RGBPixel {
         this.blauw = blauw;
     }
 
+    public void setWaardes(int rood, int groen, int blauw) {
+        this.rood = rood;
+        this.groen = groen;
+        this.blauw = blauw;
+    }
+
     public void naarGrijswaarde() {
         int gemiddelde = (rood + groen + blauw) / 3;
         rood = gemiddelde;

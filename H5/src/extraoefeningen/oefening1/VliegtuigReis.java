@@ -22,7 +22,14 @@ public class VliegtuigReis extends Reis {
         return vluchtnummer;
     }
 
+    public String toString() {
+        return super.toString() + System.lineSeparator() + "Vliegtuigreis (vluchtnummer " + vluchtnummer + ")";
+    }
+
     public void setVluchtnummer(String vluchtnummer) {
+        if (!vluchtnummer.startsWith(Character.toString(getBestemming().charAt(0)))) {
+            vluchtnummer = getBestemming().charAt(0) + vluchtnummer.substring(1);
+        }
         this.vluchtnummer = vluchtnummer;
     }
 }
