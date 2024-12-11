@@ -1,6 +1,6 @@
 package test.be.pxl.h4.ex1;
 
-import extraoefeningen.oefening1.RGBPixel;
+import extraoefeningen.oefening1.types.RGBPixel;
 import org.junit.Before;
 import org.junit.Test;
 
