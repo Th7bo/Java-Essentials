@@ -32,8 +32,9 @@ public class SportApp {
         for (String opstelling : Voetballer.getGeldigeOpstellingen()) {
             System.out.printf("*** %s ***%n", opstelling);
             for (Sporter sporter : sporters) {
-                if (!(sporter instanceof Voetballer)) continue;
-                if (((Voetballer) sporter).getOpstelling().equals(opstelling)) sporter.print();
+                if (sporter instanceof Voetballer) {
+                    if (((Voetballer) sporter).getOpstelling().equals(opstelling)) sporter.print();
+                }
             }
         }
     }

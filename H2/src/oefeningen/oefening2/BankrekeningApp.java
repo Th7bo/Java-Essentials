@@ -6,7 +6,5 @@ public class BankrekeningApp {
         jef.neemOp(50);
         jef.stort(20);
         jef.schrijfRenteBij();
-
-
     }
 }

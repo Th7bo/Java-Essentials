@@ -6,10 +6,10 @@ import java.util.Random;
 public class Band {
 
     private String naam;
-    private ArrayList<Muzikant> leden;
+    private Muzikant[] leden;
     private static final Random rand = new Random();
 
-    public Band(String naam, ArrayList<Muzikant> leden) {
+    public Band(String naam, Muzikant[] leden) {
         this.naam = naam;
         this.leden = leden;
     }
@@ -17,8 +17,8 @@ public class Band {
     public void speel(int lengte) {
         System.out.println(naam + " in concert");
         for (int i = 0; i < lengte; i++) {
-            int index = rand.nextInt(0, leden.size());
-            Muzikant muzikant = leden.get(index);
+            int index = rand.nextInt(0, leden.length);
+            Muzikant muzikant = leden[index];
             muzikant.speel();
         }
     }

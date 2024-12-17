@@ -10,8 +10,7 @@ public class TreinReis extends Reis {
 
     public TreinReis(String bestemming, double prijs, boolean nationaal, String rit) {
         super(bestemming, prijs);
-        if (nationaal && Arrays.stream(nationaleRitten).noneMatch(n -> n.equals(rit))) this.rit = "IC";
-        else this.rit = rit;
+        setRit(rit);
         this.nationaal = nationaal;
     }
 
@@ -40,6 +39,7 @@ public class TreinReis extends Reis {
     }
 
     public void setRit(String rit) {
-        this.rit = rit;
+        if (nationaal && Arrays.stream(nationaleRitten).noneMatch(n -> n.equals(rit))) this.rit = "IC";
+        else this.rit = rit;
     }
 }

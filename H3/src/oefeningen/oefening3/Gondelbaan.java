@@ -20,7 +20,6 @@ public class Gondelbaan {
         this.lengte = lengte;
         setSnelheid(snelheid);
         this.lengte = lengte;
-
         setNaam(naam);
     }
 
@@ -89,7 +88,7 @@ public class Gondelbaan {
     }
 
     public void setSnelheid(int snelheid) {
-        this.snelheid = Math.max(3, Math.min(8, snelheid));;
+        this.snelheid = Math.max(3, Math.min(8, snelheid));
     }
 
     public int getPassagiersPerGondel() {

@@ -24,7 +24,7 @@ public class Lector {
         str.append(String.format("Leraar %s is aangesteld voor %d%%", naam, aanstellingsfactor)).append("\n");
         str.append("Volgende vakken behoren tot het takenpakket:").append("\n");
         for (Vak vak : vakken) {
-            str.append(vak.toString()).append("\n");
+            str.append(vak).append("\n");
         }
         return str.toString();
     }

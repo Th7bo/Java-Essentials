@@ -90,7 +90,7 @@ public class Persoon {
 
     public void setLengte(double lengte) {
         if (lengte < 0) lengte = 0;
-        if (lengte > MAX_LENGTE) lengte = MAX_LENGTE;
+        else if (lengte > MAX_LENGTE) lengte = MAX_LENGTE;
         this.lengte = lengte;
     }
 

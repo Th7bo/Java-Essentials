@@ -62,9 +62,10 @@ public class Persoon {
     public String encrypteerNaam(int getal) {
         StringBuilder builder = new StringBuilder();
         String volleNaam = geefNaamAfgekort();
-        for (char c : volleNaam.toCharArray()) {
-            c += getal;
-            builder.append(c);
+        for (String c : volleNaam.split("")) {
+            char ch = c.charAt(0);
+            ch += getal;
+            builder.append(ch);
         }
         return builder.toString();
     }
@@ -79,7 +80,7 @@ public class Persoon {
     }
 
     public void groei(double aantal) {
-        setLengte(lengte + aantal);
+        setLengte(lengte + aantal / 100);
     }
 
     public int getLeeftijd() {
@@ -108,7 +109,7 @@ public class Persoon {
 
     public void setLengte(double lengte) {
         if (lengte < 0) lengte = 0;
-        if (lengte > MAX_LENGTE) lengte = MAX_LENGTE;
+        else if (lengte > MAX_LENGTE) lengte = MAX_LENGTE;
         this.lengte = lengte;
     }
 

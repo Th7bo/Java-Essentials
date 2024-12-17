@@ -10,8 +10,9 @@ public class Pokedex {
 
     public boolean bevat(Pokemon p) {
         for (Pokemon pokemon : pokemons) {
-            if (pokemon == null) continue;
-            if (pokemon.getNaam().equals(p.getNaam())) return true;
+            if (pokemon != null) {
+                if (pokemon.getNaam().equals(p.getNaam())) return true;
+            }
         }
         return false;
     }

@@ -25,7 +25,7 @@ public abstract class Reis {
     }
 
     public void setPrijs(double prijs) {
-        this.prijs = Math.max(MINIMUM_PRIJS, prijs);
+        this.prijs = Math.max(getMinimumPrijs(), prijs);
     }
 
     public static double getMinimumPrijs() {

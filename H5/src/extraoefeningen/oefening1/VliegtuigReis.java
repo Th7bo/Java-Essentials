@@ -6,7 +6,7 @@ public class VliegtuigReis extends Reis {
     private static final double MINIMUM_PRIJS = 25;
 
     public VliegtuigReis(String bestemming) {
-        this(bestemming, MINIMUM_PRIJS, bestemming.charAt(0) + "999");
+        this(bestemming, getMinimumPrijs(), bestemming.charAt(0) + "999");
     }
 
     public VliegtuigReis(String bestemming, double prijs, String vluchtnummer) {

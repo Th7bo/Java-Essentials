@@ -22,13 +22,13 @@ public class Bankrekening {
     }
 
     public void stort(double bedrag) {
-        if(valideerRekening()) return;
+        if(!valideerRekening()) return;
         this.saldo += bedrag;
         print();
     }
 
     public void neemOp(double bedrag) {
-        if(valideerRekening()) return;
+        if(!valideerRekening()) return;
         if (saldo == 0.0) System.out.println("U kan geen geld opnemen");
         else if (saldo < bedrag) {
             System.out.printf("U mag enkel %.2f euro opnemen", saldo);
@@ -38,7 +38,7 @@ public class Bankrekening {
     }
 
     public void doeVerrichting(int[] bedragen) {
-        if(valideerRekening()) return;
+        if(!valideerRekening()) return;
         for (int getal : bedragen) {
             if (getal < 0) neemOp(getal * -1);
             else if (getal > 0) stort(getal);
@@ -46,15 +46,15 @@ public class Bankrekening {
     }
 
     public void schrijfRenteBij() {
-        if(valideerRekening()) return;
+        if(!valideerRekening()) return;
         this.saldo += (this.saldo * (this.rente / 100));
         print();
     }
 
     private boolean valideerRekening() {
-        boolean value = eigenaarNaam.isEmpty() || rekeningnummer.isEmpty();
+        boolean value = eigenaarNaam.equals("onbekend") || rekeningnummer.equals("geen");
         if (value) System.out.println("Deze bankrekening heeft of geen naam of geen eigenaar, actie stopt!");
-        return value;
+        return !value;
     }
 
     public void print() {

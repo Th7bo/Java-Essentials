@@ -6,7 +6,7 @@ public final class Voetballer extends Sporter {
 
     private String club;
     private String opstelling;
-    private static final String[] geldigeOpstellingen = new String[]{"middenvelder", "aanvaller", "verdediger", "onbepaald"};
+    private static final String[] GELDIGE_OPSTELLINGEN = new String[]{"middenvelder", "aanvaller", "verdediger", "onbepaald"};
 
     public Voetballer(String naam, String voornaam) {
         this(naam, voornaam, "onbepaald", "onbepaald");
@@ -25,7 +25,7 @@ public final class Voetballer extends Sporter {
     }
 
     public void setOpstelling(String opstelling) {
-        if (Arrays.stream(geldigeOpstellingen).noneMatch(name -> name.equals(opstelling))) this.opstelling = "onbepaald";
+        if (Arrays.stream(GELDIGE_OPSTELLINGEN).noneMatch(name -> name.equals(opstelling))) this.opstelling = "onbepaald";
         else this.opstelling = opstelling;
     }
 
@@ -42,6 +42,6 @@ public final class Voetballer extends Sporter {
     }
 
     public static String[] getGeldigeOpstellingen() {
-        return geldigeOpstellingen;
+        return GELDIGE_OPSTELLINGEN;
     }
 }

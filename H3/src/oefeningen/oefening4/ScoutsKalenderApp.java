@@ -28,7 +28,7 @@ public class ScoutsKalenderApp {
         }
 
         System.out.printf("*** Kalender voor %s %d ***%n", date.getMonth().name(), date.getYear());
-        activiteiten.forEach(System.out::println);
+        for (Activiteit activiteit : activiteiten) System.out.println(activiteit);
     }
 
 }
