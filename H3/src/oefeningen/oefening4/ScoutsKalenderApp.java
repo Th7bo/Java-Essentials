@@ -1,5 +1,7 @@
 package oefeningen.oefening4;
 
+import oefeningen.Input;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,23 +10,16 @@ public class ScoutsKalenderApp {
 
     public static void main(String[] args) {
         ArrayList<Activiteit> activiteiten = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Geef het jaar in");
-        int year = sc.nextInt();
-        System.out.println("Geef maandnummer in");
-        int month = sc.nextInt();
-        System.out.println("Geef een dag in");
-        int day = sc.nextInt();
+        int year = Input.getInt("Geef het jaar in: ");
+        int month = Input.getInt("Geef maandnummer in: ");
+        int day = Input.getInt("Geef een dag in: ");
         LocalDate date = LocalDate.of(year, month, day);
         while (day != 0) {
             date = LocalDate.of(year, month, day);
-            System.out.println("Geef een activiteit in: ");
-            sc.nextLine();
-            String naam = sc.nextLine();
+            String naam = Input.getLine("Geef een activiteit in: ");
             Activiteit activiteit = new Activiteit(date, naam);
             activiteiten.add(activiteit);
-            System.out.println("Geef een dag in");
-            day = sc.nextInt();
+            day = Input.getInt("Geef een dag in: ");
         }
 
         System.out.printf("*** Kalender voor %s %d ***%n", date.getMonth().name(), date.getYear());
