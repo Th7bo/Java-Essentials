@@ -25,8 +25,12 @@ public final class Voetballer extends Sporter {
     }
 
     public void setOpstelling(String opstelling) {
-        if (Arrays.stream(GELDIGE_OPSTELLINGEN).noneMatch(name -> name.equals(opstelling))) this.opstelling = "onbepaald";
-        else this.opstelling = opstelling;
+        this.opstelling = "onbepaald";
+        for (String s : GELDIGE_OPSTELLINGEN) {
+            if (s.equals(opstelling)) {
+                this.opstelling = opstelling;
+            }
+        }
     }
 
     public String getClub() {

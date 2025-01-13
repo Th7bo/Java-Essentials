@@ -40,8 +40,8 @@ public class TshirtApp {
         }
 
         System.out.println();
-        Tshirt vaaksteTshirt = null;
-        Tshirt minsteTshirt = null;
+        Tshirt vaaksteTshirt = tshirts[0][0];
+        Tshirt minsteTshirt = tshirts[0][0];
 
         for (Kleur kleur : Kleur.values()) {
 
@@ -51,10 +51,9 @@ public class TshirtApp {
             }
             for (TShirtSize size : TShirtSize.values()) {
                 Tshirt shirt = tshirts[kleur.ordinal()][size.ordinal()];
-                if (vaaksteTshirt == null || shirt.getAantal() > vaaksteTshirt.getAantal()) {
+                if (shirt.getAantal() > vaaksteTshirt.getAantal()) {
                     vaaksteTshirt = shirt;
-                }
-                if (minsteTshirt == null || shirt.getAantal() < minsteTshirt.getAantal()) {
+                } else if (shirt.getAantal() < minsteTshirt.getAantal()) {
                     minsteTshirt = shirt;
                 }
                 System.out.print(shirt.getAantal() + "\t");
