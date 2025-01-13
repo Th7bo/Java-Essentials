@@ -16,6 +16,15 @@ public class Opdracht {
             }
             System.out.println();
         }
+
+        for (int j = 1; j <= array[0].length; j++) {
+            int som = 0;
+            for (int i = 1; i <= array.length; i++) {
+                som += array[i - 1][j - 1];
+            }
+            System.out.printf("Som: %d ", som);
+        }
+        System.out.println();
     }
 
 }

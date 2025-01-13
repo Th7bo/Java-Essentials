@@ -22,9 +22,7 @@ public class Result {
     }
 
     public Result(String[] data) {
-        this.timestamp = LocalDateTime.parse(data[0], PARSER);
-        this.name = data[1];
-        this.result = Double.parseDouble(data[2]);
+        this(data[1], LocalDateTime.parse(data[0], PARSER), Double.parseDouble(data[2]));
     }
 
     public String toString() {

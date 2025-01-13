@@ -1,13 +1,16 @@
 package oefeningen.oefening3;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.util.Random;
 import java.util.Scanner;
 
 public class TypingGame {
 
     public static void main(String[] args) {
         Result highscore = FileHandler.readHighscore();
+        Random random = new Random();
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Geef je naam in:");
@@ -22,10 +25,10 @@ public class TypingGame {
         System.out.println("Geef 's' in om te starten.");
         String input = scanner.nextLine();
         if (input.equals("s")) {
-            long start = System.currentTimeMillis();
+            Instant start = Instant.now();
             int score = 0;
             while (score < 5) {
-                char letter = (char) (65 + (int) (Math.random() * 26));
+                char letter = (char) ('a' + (random.nextInt(0, 27)));
                 System.out.printf("Type: %c%n", letter);
                 char inputLetter = scanner.nextLine().charAt(0);
                 if (inputLetter == letter) {
@@ -34,8 +37,9 @@ public class TypingGame {
                     System.out.println("Fout!");
                 }
             }
-            long end = System.currentTimeMillis();
-            Result result = new Result(name, LocalDateTime.now(), (end - start) / 1000.0);
+            Instant end = Instant.now();
+            long diff = end.toEpochMilli() - start.toEpochMilli();
+            Result result = new Result(name, LocalDateTime.now(), diff / 1000.0);
             System.out.println("Resultaat:");
             System.out.println(result);
             if (highscore == null || result.getResult() < highscore.getResult()) {

@@ -16,11 +16,7 @@ public class Kleur {
     }
 
     public Kleur(String hex) {
-        if (!hex.startsWith("#")) {
-            System.out.println("Ongeldige hexadecimale waarde");
-            return;
-        };
-        this.hex = hex;
+        setHex(hex);
         hexToRGB();
 
     }
@@ -33,10 +29,14 @@ public class Kleur {
 
 
     private void RGBToHex() {
-        hex = String.format("#%s%s%s", Integer.toHexString(rood), Integer.toHexString(groen), Integer.toHexString(blauw));
+        hex = String.format("#%02x%02x%02x", rood, groen, blauw);
     }
 
     public void setHex(String hex) {
+        if (!hex.startsWith("#")) {
+            System.out.println("Ongeldige hexadecimale waarde");
+            return;
+        }
         this.hex = hex;
         hexToRGB();
     }

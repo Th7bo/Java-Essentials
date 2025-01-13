@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/H7/H7.iml" filepath="$PROJECT_DIR$/H7/H7.iml" />
       <module fileurl="file://$PROJECT_DIR$/JUnit/JUnit.iml" filepath="$PROJECT_DIR$/JUnit/JUnit.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaEssentialsOefeningen.iml" filepath="$PROJECT_DIR$/JavaEssentialsOefeningen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/extra_oef/extra_oef.iml" filepath="$PROJECT_DIR$/extra_oef/extra_oef.iml" />
     </modules>
   </component>
 </project>
