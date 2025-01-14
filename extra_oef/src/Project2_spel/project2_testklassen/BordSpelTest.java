@@ -3,6 +3,8 @@ package Project2_spel.project2_testklassen;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import Project2_spel.BordSpel;
+import Project2_spel.Uitgever;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -55,14 +57,14 @@ public class BordSpelTest {
     @Test
     public void testSetSpeelduur() {
         BordSpel bordSpel = new BordSpel(RUMIKUB, uitgever);
-        bordSpel.setSpeelduur(50);
-        assertEquals(50, bordSpel.getSpeelduur());
+        bordSpel.setSpeelDuur(50);
+        assertEquals(50, bordSpel.getSpeelDuur());
     }
 
     @Test
     public void testSpeelduurWordt30IndienNegatieveWaarde() {
         BordSpel bordSpel = new BordSpel(RUMIKUB, uitgever);
-        bordSpel.setSpeelduur(-15);
-        assertEquals(30, bordSpel.getSpeelduur());
+        bordSpel.setSpeelDuur(-15);
+        assertEquals(30, bordSpel.getSpeelDuur());
     }
 }

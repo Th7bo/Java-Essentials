@@ -2,6 +2,7 @@ package Project2_spel.project2_testklassen;
 
 import static org.junit.Assert.assertEquals;
 
+import Project2_spel.Score;
 import org.junit.Test;
 
 public class ScoreTest {

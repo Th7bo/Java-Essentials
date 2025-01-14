@@ -3,6 +3,8 @@ package Project2_spel.project2_testklassen;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import Project2_spel.OnlineSpel;
+import Project2_spel.Uitgever;
 import org.junit.Before;
 import org.junit.Test;
 

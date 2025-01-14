@@ -9,14 +9,9 @@ import static org.junit.Assert.assertTrue;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import Project2_spel.*;
 import org.junit.Before;
 import org.junit.Test;
-
-import be.pxl.spel.Score;
-import be.pxl.spel.Spel;
-import be.pxl.spel.SpelEvaluatie;
-import be.pxl.spel.Speler;
-import be.pxl.spel.Uitgever;
 
 public class SpelEvaluatieTest {
     private static final int MINIMUM_LEEFTIJD = 12;
